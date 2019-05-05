@@ -6,6 +6,10 @@ app = Flask(__name__)
 
 #### Processing arguments and predicting back the result
 @app.route("/")
+def main_page():
+    return "YOU HAVE COME TO A HIDDEN PLACE! PLEASE LEAVE!!! :'("
+
+@app.route("/predict")
 def index():
     
     #### Getting all the arguments
@@ -16,9 +20,9 @@ def index():
 
     #### Getting all the arguments
     cat = request.args.get('category')
-    month = request.args.get('month')
-    backers = request.args.get('backers')
-    country = request.args.get('country')
+    month = int(request.args.get('month'))
+    backers = int(request.args.get('backers'))
+    country = int(request.args.get('country'))
 
     #### Converting cat into oneHot Model to feed it into model
     cat  = "_" + cat
