@@ -23,7 +23,7 @@ def index():
     #### Getting all the arguments
     cat = request.args.get('category').strip()
     month = int(request.args.get('month').strip())
-    backers = int(request.args.get('backers')[1:].strip())
+    backers = int(request.args.get('backers').strip())
     country = int(request.args.get('country').strip())
 
     #### Converting cat into oneHot Model to feed it into model
