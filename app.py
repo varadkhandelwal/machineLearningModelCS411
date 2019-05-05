@@ -3,6 +3,7 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
+cors  = CORS(app)
 
 #### Processing arguments and predicting back the result
 @app.route("/")
