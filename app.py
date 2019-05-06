@@ -29,8 +29,12 @@ def index():
     backers = int(request.args.get('backers').strip())
     country = int(request.args.get('country').strip())
     money_raised = int(request.args.get('money_raised').strip())
-    if(money_raised is None):
+    
+    
+    if(request.args.get('money_raised') is None):
         money_raised = 0
+    else:
+        money_raised = int(request.args.get('money_raised').strip())        
 
     #### Converting cat into oneHot Model to feed it into model
     cat  = "_" + cat
