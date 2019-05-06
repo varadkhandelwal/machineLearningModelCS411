@@ -81,6 +81,7 @@ def index():
 def clear():
     try:
         os.remove("cached1.png")
+        plt.clf()
     except:
         None
 
